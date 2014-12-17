@@ -7,8 +7,11 @@ Execute the admin console
 --------
  In order to start the centralized interface you have to execute the admin application
 
-    java -jar spring-boot-admin-1.0.0-SNAPSHOT.jar
+    java -jar spring-boot-admin-sample.jar
 
+If everything works as planned you should have a new spring-boot application running at
+
+    http://localhost:8080
 
 Execute multiple instances of the service
 --------
@@ -22,7 +25,7 @@ desired port
 
 Actuator
 --------
-Gives you the following additional end-points:
+The actuator module gives you the following additional end-points for each service:
 
 * /health – returns “ok” as text/plain content which is useful for simple service monitoring
 * /env – check environment configuration, property file and command line argument overrides, active profiles

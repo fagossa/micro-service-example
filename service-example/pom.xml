@@ -4,12 +4,7 @@
 
 	<name>Spring Boot Data MongoDB Sample</name>
 	<description>Spring Boot Data MongoDB Sample</description>
-	<url>http://projects.spring.io/spring-boot/</url>
-	<organization>
-		<name>Pivotal Software, Inc.</name>
-		<url>http://www.spring.io</url>
-	</organization>
-
+	<url>https://github.com/fagossa/micro-service-example</url>
 	<groupId>fr.xebia.springboot</groupId>
 	<artifactId>spring-boot-service</artifactId>
 

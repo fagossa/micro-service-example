@@ -1,16 +1,23 @@
 Spring boot console administration
 ========
 
-https://github.com/codecentric/spring-boot-admin
+This is just a basic example showing how to discover/administer several microservices from a centralized GUI.
 
-Execute multiple instances
+Execute the admin console
+--------
+ In order to start the centralized interface you have to execute the admin application
+
+    java -jar spring-boot-admin-1.0.0-SNAPSHOT.jar
+
+
+Execute multiple instances of the service
 --------
 In order to execute several instances of the service, you must execute the following line changing each time the
 desired port
 
-    java -jar ./target/spring-boot-sample-data-mongodb-1.0.0-SNAPSHOT.jar --server.port=6782
-    java -jar ./target/spring-boot-sample-data-mongodb-1.0.0-SNAPSHOT.jar --server.port=6784
-    java -jar ./target/spring-boot-sample-data-mongodb-1.0.0-SNAPSHOT.jar --server.port=6786
+    java -jar spring-boot-service-1.0.0-SNAPSHOT.jar --server.port=6782
+    java -jar spring-boot-service-1.0.0-SNAPSHOT.jar --server.port=6784
+    java -jar spring-boot-service-1.0.0-SNAPSHOT.jar --server.port=6786
 
 
 Actuator

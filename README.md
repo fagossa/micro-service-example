@@ -22,7 +22,6 @@ desired port
     java -jar spring-boot-service-1.0.0-SNAPSHOT.jar --server.port=6784
     java -jar spring-boot-service-1.0.0-SNAPSHOT.jar --server.port=6786
 
-
 Actuator
 --------
 The actuator module gives you the following additional end-points for each service:
@@ -32,3 +31,5 @@ The actuator module gives you the following additional end-points for each servi
 * /metrics – basic statistics on your service endpoints (e.g. hit count, error count)
 * /dump – thread dump
 * /trace – the latest HTTP request/response pairs
+
+TODO: support an external elasticsearch service

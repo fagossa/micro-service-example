@@ -19,9 +19,13 @@ package fr.xebia.cloud.data.customer;
 //import org.springframework.data.annotation.Id;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
 
-@Document(indexName = "customer", type = "customerAdaptor", shards = 1, replicas = 0, refreshInterval = "-1")
+import java.util.Date;
+
+@Document(indexName = "logstash-2014.10", type = "customerAdaptor", shards = 1, replicas = 0, refreshInterval = "-1")
 public class CustomerAdaptor {
 
 	@Id
@@ -29,6 +33,9 @@ public class CustomerAdaptor {
 	private String first;
 	private String last;
 	private DocumentType documentType;
+	@Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Date,
+			format = DateFormat.custom, pattern="yyyy-MM-dd HH:mm:ss")
+	private Date timestamp;
 
 	public String getMail() {
 		return mail;
@@ -60,6 +67,14 @@ public class CustomerAdaptor {
 
 	public void setDocumentType(DocumentType documentType) {
 		this.documentType = documentType;
+	}
+
+	public Date getTimestamp() {
+		return timestamp;
+	}
+
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
 	}
 
 	@Override

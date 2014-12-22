@@ -18,6 +18,8 @@ package fr.xebia.cloud.data.customer;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.Date;
+
 public class Customer {
 
     @Id
@@ -25,6 +27,7 @@ public class Customer {
     private String firstName;
     private String lastName;
     private DocumentType documentType;
+    private Date date;
 
     private Customer() {}
 
@@ -49,6 +52,7 @@ public class Customer {
         customerES.setFirst(firstName);
         customerES.setLast(lastName);
         customerES.setMail(mail);
+        customerES.setTimestamp(date);
         customerES.setDocumentType(documentType);
         return customerES;
     }
@@ -60,6 +64,7 @@ public class Customer {
         private String firstName;
         private String lastName;
         private DocumentType documentType;
+        private Date date;
 
         public Builder withMail(String mail) {
             this.mail = mail;
@@ -81,12 +86,18 @@ public class Customer {
             return this;
         }
 
+        public Builder withDate(Date date) {
+            this.date = date;
+            return this;
+        }
+
         public Customer build() {
             Customer customer = new Customer();
             customer.mail = mail;
             customer.firstName = firstName;
             customer.lastName = lastName;
             customer.documentType = documentType;
+            customer.date = date;
             return customer;
         }
 

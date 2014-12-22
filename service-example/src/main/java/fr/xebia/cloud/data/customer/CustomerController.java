@@ -1,4 +1,4 @@
-package fr.xebia.cloud.data.controller;
+package fr.xebia.cloud.data.customer;
 
 import fr.xebia.cloud.data.customer.Customer;
 import fr.xebia.cloud.data.customer.CustomerAdaptor;
@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -28,11 +29,31 @@ public class CustomerController {
                 .withLastName("valderrama")
                 .withDocumentType(DocumentType.getRandomValue())
                 .build();
-        repository.save(customer.toES());
+//        repository.save(customer.toES());
 
         final List<CustomerAdaptor> byFirst = repository.findByFirst("carlos");
         System.out.println(byFirst);
         return customer;
+    }
+
+    @RequestMapping(value="/batch", method= RequestMethod.GET)
+    public void executeBatch() throws Exception {
+        for (int i=0 ; i < 10 ;i ++) {
+            StringBuilder name= new StringBuilder("person")
+                    .append("_")
+                    .append(i)
+                    .append("@gmail.com");
+
+            final Customer customer = new Customer.Builder()
+                    .withMail(name.toString())
+                    .withFirstName("carlos")
+                    .withLastName("perez")
+                    .withDate(new Date())
+                    .withDocumentType(DocumentType.getRandomValue())
+                    .build();
+            repository.save(customer.toES());
+
+        }
     }
 
 }

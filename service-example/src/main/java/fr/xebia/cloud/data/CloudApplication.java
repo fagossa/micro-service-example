@@ -17,20 +17,13 @@
 package fr.xebia.cloud.data;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
 
-//http://spring.io/guides/gs/accessing-data-rest/
-//http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
-//@Configuration
 @ComponentScan
 @Configuration
 @EnableAutoConfiguration
-//@EnableEurekaClient
-//@EnableHystrix
 public class CloudApplication {
 
 	public static void main(String[] args) throws Exception {

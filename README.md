@@ -32,4 +32,26 @@ The actuator module gives you the following additional end-points for each servi
 * /dump – thread dump
 * /trace – the latest HTTP request/response pairs
 
-TODO: support an external elasticsearch service
+Elasticsearch (1.3.x)
+--------
+Elasticsearch is expected to be execute before the first access to any Repository. It is recommended to have the head plugin
+installed as it aids significantly with the index administration. In case is not already installed the following command wil do it
+
+    bin/plugin -install mobz/elasticsearch-head
+
+Then the plugin could be accessed from the following url:
+
+    http://localhost:9200/_plugin/head/
+
+Kibana (3.1.x)
+--------
+To execute kibana you must paste the kibana sources into the folder of your choise and execute a server on it. An easy
+way to do it could be to execute a python script:
+
+    python -m SimpleHTTPServer
+
+The the following url should work:
+
+    http://localhost:8000/#/dashboard/file/default.json
+
+
